@@ -1,52 +1,57 @@
-# RINGKITA
+# RINGKITA Monorepo
 
-Prototype aplikasi mobile-first untuk absensi dan manajemen sesi latihan fitness/boxing gym berbasis paket sesi fleksibel.
+Struktur proyek sekarang dipisah jelas antara `frontend` dan `backend` agar lebih mudah dipahami dan dikembangkan.
 
-## Yang sudah dibuat
+## Struktur Folder
 
-- UI/UX modern untuk role `Member` dan `Admin`
-- Alur pembelian paket sesi, booking jadwal, dan QR check-in
-- Dashboard statistik admin
-- Riwayat kehadiran dan penggunaan sesi
-- Dokumentasi teknis langsung di halaman aplikasi:
-  - struktur database
-  - daftar endpoint API
-  - flow sistem
-  - rekomendasi stack backend
+```text
+ringkita-react/
+  backend/                 # API / server
+    package.json
+    src/
+      app.js
+      server.js
+    README.md
 
-## Konsep sistem
+  frontend/                # React admin dashboard
+    package.json
+    package-lock.json
+    public/
+    src/
+      app/
+      components/
+      data/
+      features/
+      styles/
 
-1. Admin membuat paket sesi dan jadwal latihan.
-2. Member membeli paket sesi seperti 4, 8, atau 12 sesi.
-3. Member bebas memilih kelas yang tersedia.
-4. Saat hadir, member scan QR untuk check-in.
-5. Sistem memvalidasi waktu check-in dan otomatis mengurangi 1 sesi.
-6. Jika sesi habis, member harus membeli paket baru.
-
-## Struktur teknis yang direkomendasikan
-
-- Frontend: React.js / React Native
-- Backend: Node.js + Express
-- Database: Firestore atau MySQL
-- Authentication: JWT atau Firebase Auth
-- Notification: Firebase Cloud Messaging / OneSignal
-
-## Menjalankan project
-
-```bash
-npm install
-npm start
+  build/                   # build lama di root
+  node_modules/            # dependency yang sudah ada di workspace
+  package.json             # root scripts untuk menjalankan frontend/backend
+  README.md
 ```
 
-## Testing
+## Menjalankan Project
+
+### Frontend
 
 ```bash
-npm test
+npm run start:frontend
 ```
 
-## Catatan pengembangan lanjutan
+### Backend
 
-- Tambahkan router agar tiap screen menjadi halaman terpisah.
-- Hubungkan data dummy ke backend nyata.
-- Integrasikan QR scanner kamera dan generator token server-side.
-- Tambahkan payment gateway untuk pembelian paket sesi.
+```bash
+npm run start:backend
+```
+
+### Build Frontend
+
+```bash
+npm run build
+```
+
+## Catatan
+
+- `frontend/` berisi aplikasi React admin desktop.
+- `backend/` masih berupa starter structure agar nanti mudah disambungkan ke database dan API.
+- Root `package.json` dipakai sebagai command entry agar lebih rapi saat kerja di monorepo.

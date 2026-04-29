@@ -117,9 +117,29 @@ export const attendanceHistory = [
   },
 ];
 
+export const memberFeedback = [
+  {
+    id: 'FDB-001',
+    memberId: 'MBR-2401',
+    memberName: 'Rafi',
+    category: 'Teknik',
+    message: 'Progress footwork bagus. Fokus lagi pada guard saat selesai kombinasi.',
+    createdAt: '27 Apr 2026',
+  },
+  {
+    id: 'FDB-002',
+    memberId: 'MBR-2402',
+    memberName: 'Rizky Pratama',
+    category: 'Kondisi',
+    message: 'Stamina stabil. Tambahkan 1 sesi conditioning minggu ini.',
+    createdAt: '26 Apr 2026',
+  },
+];
+
 export const adminTabs = [
   { id: 'dashboard', label: 'Home' },
   { id: 'schedule', label: 'Jadwal' },
+  { id: 'packages', label: 'Sesi' },
   { id: 'members', label: 'Member' },
   { id: 'history', label: 'Riwayat' },
 ];
